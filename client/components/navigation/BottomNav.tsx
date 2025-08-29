@@ -1,5 +1,5 @@
 import { FaHome, FaRegCommentDots, FaUser, FaListUl, FaWallet } from "react-icons/fa";
-//import { Home, MessageCircle, User, ListTodo, Wallet } from "lucide-react";
+
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function BottomNav() {

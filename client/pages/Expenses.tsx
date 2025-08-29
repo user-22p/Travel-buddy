@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import BottomNav from "@/components/navigation/BottomNav";
-import { Plus, ArrowLeft } from "lucide-react";
+import { FaPlus, FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 interface Expense { id: string; title: string; amount: number; paidBy: string; status: "paid" | "pending" | "settled" }
@@ -36,7 +36,7 @@ export default function Expenses() {
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="icon" aria-label="Back" onClick={() => navigate('/dashboard')}>
-            <ArrowLeft className="h-5 w-5" />
+            <FaArrowLeft className="h-5 w-5" />
           </Button>
           <h1 className="text-2xl font-bold text-foreground">Trip Expenses</h1>
         </div>
@@ -59,7 +59,7 @@ export default function Expenses() {
           <CardContent className="flex gap-2">
             <Input placeholder="e.g., Osaka Food Tour" value={title} onChange={(e) => setTitle(e.target.value)} />
             <Input placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} />
-            <Button onClick={add}><Plus className="h-4 w-4 mr-1" /> Add</Button>
+            <Button onClick={add}><FaPlus className="h-4 w-4 mr-1" /> Add</Button>
           </CardContent>
         </Card>
 

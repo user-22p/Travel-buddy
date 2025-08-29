@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import BottomNav from "@/components/navigation/BottomNav";
 import { addTask, getTasks, removeTask, updateTask, type Priority, type Task } from "@/lib/planner";
-import { Plus, Trash2, Check, Star, ArrowLeft } from "lucide-react";
+import { FaPlus, FaTrash, FaCheck, FaStar, FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export default function Planner() {
@@ -39,7 +39,7 @@ export default function Planner() {
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="icon" aria-label="Back" onClick={() => navigate('/dashboard')}>
-            <ArrowLeft className="h-5 w-5" />
+            <FaArrowLeft className="h-5 w-5" />
           </Button>
           <h1 className="text-2xl font-bold text-foreground">Trip To-Do Planner</h1>
         </div>
@@ -52,7 +52,7 @@ export default function Planner() {
           <CardContent className="space-y-3">
             <div className="flex gap-2">
               <Input placeholder="e.g., Book Kyoto hotel" value={title} onChange={(e) => setTitle(e.target.value)} />
-              <Button onClick={create}><Plus className="h-4 w-4 mr-1" /> Add</Button>
+              <Button onClick={create}><FaPlus className="h-4 w-4 mr-1" /> Add</Button>
             </div>
             <div className="flex items-center gap-2">
               <Label className="text-sm">Priority:</Label>
@@ -68,7 +68,7 @@ export default function Planner() {
             <Card key={t.id} className="bg-white/90 border-[hsl(var(--border))]">
               <CardContent className="py-4 flex items-center gap-3">
                 <button aria-label="done" onClick={() => toggleDone(t.id, !t.done)} className={`p-2 rounded-full ${t.done?"bg-primary text-white":"bg-muted text-foreground/70"}`}>
-                  <Check className="h-4 w-4" />
+                  <FaCheck className="h-4 w-4" />
                 </button>
                 <div className="flex-1">
                   <div className={`font-medium ${t.done?"line-through text-foreground/60":""}`}>{t.title}</div>
@@ -76,9 +76,9 @@ export default function Planner() {
                 </div>
                 <Badge className={`${colorFor(t.priority)} capitalize`}>{t.priority}</Badge>
                 <div className="flex items-center gap-2">
-                  <button aria-label="priority-low" onClick={() => changePriority(t.id, "low")} className="p-2 rounded-lg hover:bg-muted"><Star className="h-4 w-4 opacity-50" /></button>
-                  <button aria-label="priority-high" onClick={() => changePriority(t.id, "high")} className="p-2 rounded-lg hover:bg-muted"><Star className="h-4 w-4" /></button>
-                  <button aria-label="delete" onClick={() => del(t.id)} className="p-2 rounded-lg hover:bg-muted text-destructive"><Trash2 className="h-4 w-4" /></button>
+                  <button aria-label="priority-low" onClick={() => changePriority(t.id, "low")} className="p-2 rounded-lg hover:bg-muted"><FaStar className="h-4 w-4 opacity-50" /></button>
+                  <button aria-label="priority-high" onClick={() => changePriority(t.id, "high")} className="p-2 rounded-lg hover:bg-muted"><FaStar className="h-4 w-4" /></button>
+                  <button aria-label="delete" onClick={() => del(t.id)} className="p-2 rounded-lg hover:bg-muted text-destructive"><FaTrash className="h-4 w-4" /></button>
                 </div>
               </CardContent>
             </Card>

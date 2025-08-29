@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, MoreVertical, Send, Smile } from "lucide-react";
+import { FaArrowLeft, FaEllipsisV, FaPaperPlane, FaRegSmile } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -40,7 +40,7 @@ export default function Messages() {
       <header className="sticky top-0 z-30 bg-white/85 backdrop-blur-md border-b px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center gap-3">
           <button aria-label="Back" onClick={() => navigate(-1)} className="p-2 rounded-lg hover:bg-muted text-foreground/80">
-            <ArrowLeft className="h-5 w-5" />
+            <FaArrowLeft className="h-5 w-5" />
           </button>
           <Avatar className="h-9 w-9 ring-2 ring-primary/20">
             <AvatarImage src="/api/placeholder/64/64" alt="Buddy" />
@@ -56,7 +56,7 @@ export default function Messages() {
             {typing && <div className="text-xs text-muted-foreground">typing…</div>}
           </div>
           <button aria-label="More" className="p-2 rounded-lg hover:bg-muted text-foreground/80">
-            <MoreVertical className="h-5 w-5" />
+            <FaEllipsisV className="h-5 w-5" />
           </button>
         </div>
       </header>
@@ -91,7 +91,7 @@ export default function Messages() {
       <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t">
         <div className="max-w-3xl mx-auto px-3 py-2 flex items-end gap-2">
           <button aria-label="Emoji" className="p-2 rounded-lg hover:bg-muted text-foreground/80">
-            <Smile className="h-5 w-5" />
+            <FaRegSmile className="h-5 w-5" />
           </button>
           <div className="flex-1">
             <Input
@@ -103,7 +103,7 @@ export default function Messages() {
             />
           </div>
           <Button onClick={send} aria-label="Send" className="bg-primary text-primary-foreground">
-            <Send className="h-4 w-4 mr-1" /> Send
+            <FaPaperPlane className="h-4 w-4 mr-1" /> Send
           </Button>
         </div>
       </div>

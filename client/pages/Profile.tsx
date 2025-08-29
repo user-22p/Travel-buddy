@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
-import { Edit2, Save, Plus, X, User } from "lucide-react";
+import { FaEdit, FaSave, FaPlus, FaTimes, FaUser } from "react-icons/fa";
 import SocialButtons from "@/components/auth/SocialButtons";
 import { useNavigate } from "react-router-dom";
 import ProfileSetup from "./ProfileSetup";
@@ -132,7 +132,7 @@ export default function Profile() {
                 <CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <div className="flex items-center gap-4">
                     <Avatar className="h-16 w-16 ring-2 ring-primary/20">
-                      {me?.image ? <AvatarImage src={me.image} alt={me?.name ?? "Profile image"} /> : <AvatarFallback><User className="h-6 w-6" /></AvatarFallback>}
+                      {me?.image ? <AvatarImage src={me.image} alt={me?.name ?? "Profile image"} /> : <AvatarFallback><FaUser className="h-6 w-6" /></AvatarFallback>}
                     </Avatar>
                     <div>
                       <CardTitle className="text-2xl">{me?.name || me?.username || me?.email || "Your Profile"}</CardTitle>
@@ -141,7 +141,7 @@ export default function Profile() {
                   </div>
                   <div className="flex items-center gap-3 mt-4 md:mt-0">
                     <Button onClick={onSave} disabled={saving}>
-                      <Save className="h-4 w-4 mr-2" /> Save Changes
+                      <FaSave className="h-4 w-4 mr-2" /> Save Changes
                     </Button>
                   </div>
                 </CardHeader>
@@ -158,7 +158,7 @@ export default function Profile() {
                         <div className="flex gap-2">
                           <Input placeholder="Add a trait" value={traitInput} onChange={(e) => setTraitInput(e.target.value)} className="h-9 w-40" />
                           <Button variant="secondary" className="h-9" onClick={() => addTrait(traitInput)}>
-                            <Plus className="h-4 w-4 mr-1" /> Add
+                            <FaPlus className="h-4 w-4 mr-1" /> Add
                           </Button>
                         </div>
                       </div>
@@ -167,7 +167,7 @@ export default function Profile() {
                           <Badge key={t} variant="secondary" className="px-3 py-1 rounded-full">
                             <span className="mr-1">{t}</span>
                             <button aria-label={`Remove ${t}`} onClick={() => removeTrait(t)} className="ml-1 inline-flex items-center justify-center rounded-full hover:text-destructive focus:outline-none focus:ring-2 focus:ring-primary/40">
-                              <X className="h-3.5 w-3.5" />
+                              <FaTimes className="h-3.5 w-3.5" />
                             </button>
                           </Badge>
                         ))}

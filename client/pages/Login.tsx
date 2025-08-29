@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Plane, ArrowLeft } from "lucide-react";
+import { FaPlane, FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SocialButtons from "@/components/auth/SocialButtons";
@@ -42,12 +42,12 @@ export default function Login() {
             className="absolute top-4 left-4"
             onClick={() => navigate('/')}
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
+            <FaArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
           
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Plane className="h-8 w-8 text-primary" />
+            <FaPlane className="h-8 w-8 text-primary" />
             <span className="font-bold text-2xl text-foreground">TravelBuddy</span>
           </div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Welcome Back</h1>

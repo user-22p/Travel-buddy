@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Plane, Search, Heart, MessageCircle, MapPin, Calendar, IndianRupee, User, Settings, LogOut, Filter, ListTodo, Wallet } from "lucide-react";
+import { FaPlane, FaSearch, FaHeart, FaRegCommentDots, FaMapMarkerAlt, FaCalendarAlt, FaRupeeSign, FaUser, FaCog, FaSignOutAlt, FaFilter, FaListUl, FaWallet } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import BottomNav from "@/components/navigation/BottomNav";
@@ -92,31 +92,31 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <Plane className="h-8 w-8 text-primary" />
+              <FaPlane className="h-8 w-8 text-primary" />
               <span className="font-bold text-xl text-foreground">TravelBuddy</span>
             </div>
             <div className="flex items-center gap-4">
               <Button variant="ghost" size="sm" onClick={() => navigate('/planner')}>
-                <ListTodo className="h-4 w-4 mr-2" />
+                <FaListUl className="h-4 w-4 mr-2" />
                 Planner
               </Button>
               <Button variant="ghost" size="sm" onClick={() => navigate('/expenses')}>
-                <Wallet className="h-4 w-4 mr-2" />
+                <FaWallet className="h-4 w-4 mr-2" />
                 Expenses
               </Button>
               <Button variant="ghost" size="sm" onClick={() => navigate('/messages')}>
-                <MessageCircle className="h-4 w-4 mr-2" />
+                <FaRegCommentDots className="h-4 w-4 mr-2" />
                 Messages
               </Button>
               <Button variant="ghost" size="sm" onClick={() => navigate('/profile')}>
-                <User className="h-4 w-4 mr-2" />
+                <FaUser className="h-4 w-4 mr-2" />
                 Profile
               </Button>
               <Button variant="ghost" size="sm" onClick={() => navigate('/settings')}>
-                <Settings className="h-4 w-4" />
+                <FaCog className="h-4 w-4" />
               </Button>
               <Button variant="ghost" size="sm" onClick={() => navigate('/')}>
-                <LogOut className="h-4 w-4" />
+                <FaSignOutAlt className="h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -134,14 +134,14 @@ export default function Dashboard() {
         <Card className="mb-8 border-blue-100">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Filter className="h-5 w-5" />
+              <FaFilter className="h-5 w-5" />
               Search & Filter
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search by name or destination..."
                   value={searchQuery}
@@ -173,7 +173,7 @@ export default function Dashboard() {
                 </SelectContent>
               </Select>
               <Button className="w-full">
-                <Search className="h-4 w-4 mr-2" />
+                <FaSearch className="h-4 w-4 mr-2" />
                 Search
               </Button>
             </div>
@@ -209,15 +209,15 @@ export default function Dashboard() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                    <FaMapMarkerAlt className="h-4 w-4 text-muted-foreground" />
                     <span className="font-medium">{buddy.destination}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
+                    <FaCalendarAlt className="h-4 w-4" />
                     <span>{buddy.dates}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <IndianRupee className="h-4 w-4" />
+                    <FaRupeeSign className="h-4 w-4" />
                     <span>{buddy.budget}</span>
                   </div>
                 </div>
@@ -239,11 +239,11 @@ export default function Dashboard() {
                 
                 <div className="flex gap-2 pt-2">
                   <Button size="sm" className="flex-1">
-                    <Heart className="h-4 w-4 mr-2" />
+                    <FaHeart className="h-4 w-4 mr-2" />
                     Connect
                   </Button>
                   <Button size="sm" variant="outline" className="flex-1">
-                    <MessageCircle className="h-4 w-4 mr-2" />
+                    <FaRegCommentDots className="h-4 w-4 mr-2" />
                     Message
                   </Button>
                 </div>
@@ -255,7 +255,7 @@ export default function Dashboard() {
         {filteredBuddies.length === 0 && (
           <Card className="text-center py-12">
             <CardContent>
-              <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <FaSearch className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <CardTitle className="mb-2">No travel buddies found</CardTitle>
               <CardDescription>
                 Try adjusting your search criteria or check back later for new travelers.

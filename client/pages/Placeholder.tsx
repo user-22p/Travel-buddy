@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Plane, ArrowLeft, Construction } from "lucide-react";
+
+import { FaPlane, FaArrowLeft, FaPersonDigging } from "react-icons/fa6";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Placeholder() {
@@ -17,7 +18,7 @@ export default function Placeholder() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <Plane className="h-8 w-8 text-primary" />
+                <FaPlane className="h-8 w-8 text-primary" />
               <span className="font-bold text-xl text-foreground">TravelBuddy</span>
             </div>
             <div className="flex items-center gap-4">
@@ -36,7 +37,7 @@ export default function Placeholder() {
       <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] p-4">
         <Card className="w-full max-w-md text-center border-2 border-orange-100">
           <CardHeader>
-            <Construction className="h-16 w-16 text-accent mx-auto mb-4" />
+              <FaPersonDigging className="h-16 w-16 text-accent mx-auto mb-4" />
             <CardTitle className="text-2xl text-foreground">
               {formattedPageName} Coming Soon
             </CardTitle>
@@ -54,7 +55,7 @@ export default function Placeholder() {
                 onClick={() => navigate(-1)}
                 className="flex-1"
               >
-                <ArrowLeft className="h-4 w-4 mr-2" />
+                  <FaArrowLeft className="h-4 w-4 mr-2" />
                 Go Back
               </Button>
               <Button 

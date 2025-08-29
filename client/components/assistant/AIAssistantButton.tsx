@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaRegCommentDots, FaRegPaperPlane, FaRegStar } from "react-icons/fa";
-//import { MessageCircle, Send, Sparkles } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { importRecommendations } from "@/lib/planner";

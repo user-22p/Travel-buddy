@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Plane, Upload, Plus, X } from "lucide-react";
+import { FaPlane, FaUpload, FaPlus, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -99,7 +99,7 @@ export default function ProfileSetup() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Plane className="h-8 w-8 text-primary" />
+            <FaPlane className="h-8 w-8 text-primary" />
             <span className="font-bold text-2xl text-foreground">TravelBuddy</span>
           </div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Complete Your Profile</h1>
@@ -127,10 +127,10 @@ export default function ProfileSetup() {
                 <div className="flex flex-col items-center space-y-4">
                   <div className="relative">
                     <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center border-2 border-dashed border-muted-foreground">
-                      <Upload className="h-6 w-6 text-muted-foreground" />
+                      <FaUpload className="h-6 w-6 text-muted-foreground" />
                     </div>
                     <Button size="sm" className="absolute -bottom-2 -right-2 rounded-full h-8 w-8 p-0">
-                      <Plus className="h-4 w-4" />
+                      <FaPlus className="h-4 w-4" />
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground">Upload profile picture</p>
@@ -309,7 +309,7 @@ export default function ProfileSetup() {
                         className="cursor-pointer justify-center p-2 h-auto"
                         onClick={() => handleInterestToggle(interest, 'dislikes')}
                       >
-                        {formData.dislikes.includes(interest) && <X className="h-3 w-3 mr-1" />}
+                        {formData.dislikes.includes(interest) && <FaTimes className="h-3 w-3 mr-1" />}
                         {interest}
                       </Badge>
                     ))}

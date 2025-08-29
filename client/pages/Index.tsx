@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Users, Heart, Shield, Star, Plane } from "lucide-react";
+import { FaMapMarkerAlt, FaUsers, FaHeart, FaShieldAlt, FaStar, FaPlane } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import AIAssistantButton from "@/components/assistant/AIAssistantButton";
 
@@ -10,22 +10,22 @@ export default function Index() {
 
   const features = [
     {
-      icon: Users,
+      icon: FaUsers,
       title: "Smart Matching",
       description: "Find travel buddies with shared interests and compatible personalities"
     },
     {
-      icon: Shield,
+      icon: FaShieldAlt,
       title: "Safe & Secure",
       description: "Verified profiles and secure messaging for peace of mind"
     },
     {
-      icon: MapPin,
+      icon: FaMapMarkerAlt,
       title: "Global Destinations",
       description: "Discover travelers heading to your dream destinations"
     },
     {
-      icon: Heart,
+      icon: FaHeart,
       title: "Compatibility Scores",
       description: "AI-powered matching based on preferences and travel styles"
     }
@@ -59,7 +59,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <Plane className="h-8 w-8 text-primary" />
+              <FaPlane className="h-8 w-8 text-primary" />
               <span className="font-bold text-xl text-foreground">TravelBuddy</span>
             </div>
             <div className="flex items-center gap-4">
@@ -159,7 +159,7 @@ export default function Index() {
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <FaStar key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   <CardTitle className="text-lg">{testimonial.name}</CardTitle>
@@ -197,7 +197,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Plane className="h-6 w-6" />
+                <FaPlane className="h-6 w-6" />
                 <span className="font-bold text-lg">TravelBuddy</span>
               </div>
               <p className="text-gray-300">
